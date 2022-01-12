@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" id="tree" class="rose" style="touch-action: none">
+<head>
+    <meta name="viewport" content="width-device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+    <style>
+        @font-face {
+            font-family: proximanova;
+            src: url(proximanova-reg-webfont.ttf) format("truetype");
+        }
+        @font-face{
+            font-family: proximanovabold;
+            src: url(proximanova-bold-webfont.ttf) format("truetype");
+        }
+
+        /* covers :fullscreen */
+        body{
+            font-family: proximanova;
+            margin: 0px;
+            background-color: rgb(238, 236, 236);
+        }
+
+        main{
+            max-width:600px;
+            height:100vh;
+            background-image: url("img/back2.png");
+            background-size: 100% 100%;
+            margin:auto;
+            position: relative;
+        }
+
+        .header{
+            height: 15vh;
+        }
+
+        .header img{
+            float: right;
+            height: 95%;
+        }
+
+        @media only screen and (max-width: 700px) {
+                .header {
+                    height: 10vh;
+                }
+
+                main {
+                    height: 85vh;
+                }
+
+                .button {
+                    left: 30%;
+                }
+            }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="header">
+            <img src="img/flow.jpg">
+        </div>
+    </main>
+</body>
+
+</html>

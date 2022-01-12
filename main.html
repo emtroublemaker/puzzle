@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" id="tree" class="rose" style="touch-action: none">
+<head>
+    <title>Welcome to the game</title>
+    <div clas = "timercss"><span id="timer"></span></div>
+    <!-- <span id="count">30</span> seconds
+  <br>
+  <button onclick="start()">
+  START
+  </button> -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="puzz.css"/>
+  <style>
+              @font-face{
+            font-family: proximanovabold;
+            src: url(proximanova-bold-webfont.ttf) format("truetype");
+        }
+
+        
+        @font-face{
+            font-family: proximanovabold;
+            src: url(proximanova-bold-webfont.ttf) format("truetype");
+        }
+
+        .d-none{
+            display: none !important;
+        }
+
+        .modal-backdrop{
+            width:100%;
+            height:100%;
+            position:fixed;
+            left:0;
+            top:0;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            z-index:100;
+            background-color:rgba(0,0,0,0.4);
+        }
+        .modal-content{
+            width:95%;
+            max-width:400px;
+            height:auto;
+            background-color:black;
+            border-radius:8px;
+            padding:20px;
+            text-align:center;
+            justify-content:center;
+            font-size:16px;
+            font-family:proximanova;
+            color: rgb(245, 96, 96);
+        }
+        .modal-button{
+            display:inline-block;
+            text-decoration:none;
+            cursor: pointer;
+            background-image: url("img/button.png");
+            background-size: 100% 100%;
+            color:black;
+            width: 150px;
+            height: 40px;
+            margin: auto;
+            margin-top: 15px;
+        }
+        
+        /* Changes occured full screen */
+        .play-backdrop{
+            width:100%;
+            height:100%;
+            position:fixed;
+            left:0;
+            top:0;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            z-index:100;
+            background-color:rgba(247, 94, 94, 0.4);
+        }
+
+        .play-content{
+            width:95%;
+            max-width:400px;
+            height:auto;
+            background-color:slateblue;
+            border-radius:8px;
+            padding:20px;
+            text-align:center;
+            justify-content:center;
+            font-size:16px;
+            font-family:proximanova;
+            color: white;
+        }
+
+        .play-button{
+            display:inline-block;
+            cursor:pointer;
+            background-size: 100% 100%;
+            color:rgb(12, 9, 9);
+            width: 120px;
+            height: 30px;
+            margin: auto;
+            margin-top: 15px;
+        }
+
+        .header{
+            height: 15vh;
+            max-width: 750px;
+            margin: auto;
+        }
+
+        .header img{
+            float: right;
+            height: 200%;
+        }
+  </style>
+  </head>
+  <body id="body">
+      <audio id="bg_music" loop>
+          <source src="bgmusic.mpeg" type="audio/mpeg">
+      </audio>
+      <audio id="place_music">
+          <source src="place.mp3" type="audio/mpeg">
+      </audio>
+      <audio>
+          <source src="end.wav" type="audio/wav">
+      </audio>
+      <div class="header">
+          <img src="img/flow.jpg"/>
+      </div>
+
+      <div class="modal-backdrop d-none">
+          <div class="modal-content">
+              <h2>Congrats!!!</h2>
+              <p style="margin: 1em;">You won!!!</p>
+          </div>
+      </div>
+  </body>
+  <div id="puzzle1pop" class="play-backdrop">
+    <div class="play-content">
+        <p style="margin:1em;">
+            Arrange puzzle pieces to fix this game.
+        </p>
+        <button id="btn1" class="play-button">Start Game</button>
+    </div>
+  </div>
+
+  <div id="puzzle2pop" class="play-backdrop">
+    <div class="play-content">
+        <p style="margin:1em;">
+            Arrange puzzle pieces to fix this.<br><br><b>Play this game in landscape mode</b>
+        </p>
+        <button id="btn2" class="play-button">Start Game</button>
+    </div>
+  </div>
+</body>
+
+
+
+  </html>
+    
