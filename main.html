@@ -117,15 +117,9 @@
   </style>
   </head>
   <body id="body">
-      <audio id="bg_music" loop>
-          <source src="bgmusic.mpeg" type="audio/mpeg">
-      </audio>
-      <audio id="place_music">
-          <source src="place.mp3" type="audio/mpeg">
-      </audio>
-      <audio>
-          <source src="end.wav" type="audio/wav">
-      </audio>
+      <div class="canvaswrapper" id="canvasparent">
+        <canvas id="canvas" class="canvas"></canvas>
+      </div>
       <div class="header">
           <img src="img/flow.jpg"/>
       </div>
@@ -156,7 +150,38 @@
   </div>
 </body>
 
+<script>
+        var choice = localStorage.getItem("choice");
 
+        if(choice==0){
+            document.getElementById("puzzle2pop").classList.add('d-none');
+            document.getElementById('canvas').style.backgroundImage = 'url("img/120 trans 2.png")';
+            document.getElementById('canvas').style.backgroundSize="100% 100%";
+        }
+        else{
+            document.getElementById("puzzle1pop").classList.add('d-none');
+            document.getElementById("canvas").style.backgroundImage = 'url("img/Hyper trans22.png")';
+            document.getElementById('canvas').style.backgroundSize="100% 100%";
+        }
+
+        var playButton1 = document.getElementById('btn1');
+        playButton1.addEventListener('click',function(){
+            var gameState = localStorage.getItem("gameState");
+            if(!(gameState && gameState == "lost")){
+                document.getElementById("puzzle1pop").classList.add('d-none');
+                console.log("Window orientation is: landscape");
+                localStorage.setItem("time-remaining",120);
+                window.setInterval(function(){
+                    var time = parseInt(localStorage.getItem("time-remaining"));
+                    time = time - 1;
+                    localStorage.setItem("time-remaining",time);
+                },1000);
+            } else if(gameState && gameState == "won"){
+                document.getElementById('puzzle1pop').classList.add('d-none');
+                document.querySelector('.modal-backdrop').classList.remove('d-none');
+            }
+        })
+    </script>
 
   </html>
     
