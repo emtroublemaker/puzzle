@@ -2,15 +2,103 @@
 <html lang="en" id="tree" class="rose" style="touch-action: none">
 <head>
     <title>Welcome to the game</title>
-    <div clas = "timercss"><span id="timer"></span></div>
-    <!-- <span id="count">30</span> seconds
-  <br>
-  <button onclick="start()">
-  START
-  </button> -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!--   <link rel="stylesheet" type="text/css" href="puzz.css"/> -->
+  <link rel="stylesheet" type="text/css" href="puzz.css"/>
+  <link rel="stylesheet" href="puzz.css">
+  
+  <script  type="text/javascript">
+</script>
+
+
+<head>
+	<script>
+		//set minutes
+		var mins = 2;
+
+		//calculate the seconds
+		var secs = mins * 60;
+
+		//countdown function is evoked when page is loaded
+		function countdown() {
+			setTimeout('Decrement()', 60);
+		}
+
+		//Decrement function decrement the value.
+		function Decrement() {
+			if (document.getElementById) {
+				minutes = document.getElementById("minutes");
+				seconds = document.getElementById("seconds");
+
+				//if less than a minute remaining
+				//Display only seconds value.
+				if (seconds < 59) {
+					seconds.value = secs;
+				}
+
+				//Display both minutes and seconds
+				//getminutes and getseconds is used to
+				//get minutes and seconds
+				else {
+					minutes.value = getminutes();
+					seconds.value = getseconds();
+				}
+				//when less than a minute remaining
+				//colour of the minutes and seconds
+				//changes to red
+				if (mins < 1) {
+					minutes.style.color = "red";
+					seconds.style.color = "red";
+				}
+				//if seconds becomes zero,
+				//then page alert time up
+				if (mins < 0) {
+					alert('time up');
+					minutes.value = 0;
+					seconds.value = 0;
+                    window.location.href = "index.html";
+				}
+				//if seconds > 0 then seconds is decremented
+				else {
+					secs--;
+					setTimeout('Decrement()', 1000);
+				}
+			}
+		}
+
+		function getminutes() {
+			//minutes is seconds divided by 60, rounded down
+			mins = Math.floor(secs / 60);
+			return mins;
+		}
+
+		function getseconds() {
+			//take minutes remaining (as seconds) away
+			//from total seconds remaining
+			return secs - Math.round(mins * 60);
+		}
+	</script>
+</head>
+
+
+
+<!-- onload function is evoke when page is load -->
+<!--countdown function is called when page is loaded -->
+
+<body onload="countdown();">
+    <div>
+		Time Left: 
+		<input id="minutes" type="text" style="width: 10px;
+			border: none; font-size: 16px;
+			font-weight: bold; color: black;"><font size="5"> :
+						</font>
+		<input id="seconds" type="text" style="width: 30px;
+						border: none; font-size: 16px;
+						font-weight: bold; color: black;">
+	</div>
+    <a id="downloadLink" href="Xiaomi 11i Series.pdf" download="Xiaomi 11i Series.pdf">
+    </a>
+  
   <style>
               @font-face{
             font-family: proximanovabold;
@@ -50,7 +138,7 @@
             justify-content:center;
             font-size:16px;
             font-family:proximanova;
-            color: rgb(245, 96, 96);
+            color: rgb(14, 13, 13);
         }
         .modal-button{
             display:inline-block;
@@ -65,51 +153,23 @@
             margin-top: 15px;
         }
         
-        /* Changes occured full screen */
-        .play-backdrop{
-            width:100%;
-            height:100%;
-            position:fixed;
-            left:0;
-            top:0;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            z-index:100;
-            background-color:rgba(136, 235, 123, 0.4);
-        }
-
-        .play-content{
-            width:95%;
-            max-width:300px;
-            height:auto;
-            background-color: black;
-            border-radius:8px;
-            padding:20px;
-            text-align:center;
-            justify-content:center;
-            font-size:16px;
-            font-family:proximanova;
-            color: white;
-        }
-
         .play-button{
             display:inline-block;
             cursor:pointer;
             background-size: 100% 100%;
-            color: blue;
-            width: 120px;
-            height: 30px;
+            color: yellow;
+            width: 150px;
+            height: 40px;
             margin: auto;
             margin-top: 15px;
         }
 
         .header{
             height: 15vh;
-            max-width: 75px;
+            max-width: 750px;
             margin: auto;
             float: right;
-            margin-top: -38%;
+            margin-top: 1%;
         }
 
         .header img{
@@ -118,72 +178,97 @@
         }
   </style>
   </head>
-  <body id="body">
-      <div class="canvaswrapper" id="canvasparent">
-        <canvas id="canvas" class="canvas"></canvas>
-      </div>
-      <div class="header">
-          <img src="img/gun1.jpg"/>
-      </div>
+	<div id="main">
+		<h1>TIC TAC TOE</h1>
 
+		<!-- Game Instructions -->
+		<p id="ins">Game starts by just Tap on
+			box<br><br>First Player starts as
+			<b>Player X</b><br>And<br>Second
+			Player as <b>Player 0</b>
+		</p>
+
+
+
+		<br><br>
+		<!-- 3*3 grid of Boxes -->
+		<input type="text" id="b1" onclick=
+			"myfunc_3(); myfunc();" readonly>
+
+		<input type="text" id="b2" onclick=
+			"myfunc_4(); myfunc();" readonly>
+
+		<input type="text" id="b3" onclick=
+			"myfunc_5(); myfunc();" readonly>
+		<br><br>
+
+		<input type="text" id="b4" onclick=
+			"myfunc_6(); myfunc();" readonly>
+			
+		<input type="text" id="b5" onclick=
+			"myfunc_7(); myfunc();" readonly>
+
+		<input type="text" id="b6" onclick=
+			"myfunc_8(); myfunc();" readonly>
+		<br><br>
+
+		<input type="text" id="b7" onclick=
+			"myfunc_9(); myfunc();" readonly>
+
+		<input type="text" id="b8" onclick=
+			"myfunc_10();myfunc();" readonly>
+
+		<input type="text" id="b9" onclick=
+			"myfunc_11();myfunc();" readonly>
+
+		<!-- Grid end here -->
+		<br><br><br>
+		<!-- Button to reset game -->
+		<button id="but" onclick="myfunc_2()">
+			RESET
+		</button>
+
+		<br><br>
+		<!-- Space to show player turn -->
+		<p id="print"></p>
+
+
+
+	</div>
+
+        <script src="main.js"></script>
       <div class="modal-backdrop d-none">
           <div class="modal-content">
-              <h2>Congrats!!!</h2>
-              <p style="margin: 1em;">You won!!!</p>
           </div>
       </div>
   </body>
-  <div id="puzzle1pop" class="play-backdrop">
-    <div class="play-content">
-        <p style="margin:1em;">
-            Arrange puzzle pieces to fix this game.
-        </p>
-        <button id="btn1" class="play-button">Start Game</button>
-    </div>
   </div>
-
-  <div id="puzzle2pop" class="play-backdrop">
-    <div class="play-content">
-        <p style="margin:1em;">
-            Arrange puzzle pieces to fix this.<br><br><b></b>
-        </p>
-        <button id="btn2" class="play-button">Start Game</button>
-    </div>
   </div>
-</body>
+</div>
 
-<script>
-        var choice = localStorage.getItem("choice");
+        <!-- PDF -->
 
-        if(choice==0){
-            document.getElementById("puzzle2pop").classList.add('d-none');
-            document.getElementById('canvas').style.backgroundImage = 'url("img/120 trans 2.png")';
-            document.getElementById('canvas').style.backgroundSize="100% 100%";
-        }
-        else{
-            document.getElementById("puzzle1pop").classList.add('d-none');
-            document.getElementById("canvas").style.backgroundImage = 'url("img/Hyper trans22.png")';
-            document.getElementById('canvas').style.backgroundSize="100% 100%";
-        }
-
-        var playButton1 = document.getElementById('btn1');
-        playButton1.addEventListener('click',function(){
-            var gameState = localStorage.getItem("gameState");
-            if(!(gameState && gameState == "lost")){
-                document.getElementById("puzzle1pop").classList.add('d-none');
-                console.log("Window orientation is: landscape");
-                localStorage.setItem("time-remaining",120);
-                window.setInterval(function(){
-                    var time = parseInt(localStorage.getItem("time-remaining"));
-                    time = time - 1;
-                    localStorage.setItem("time-remaining",time);
-                },1000);
-            } else if(gameState && gameState == "won"){
-                document.getElementById('puzzle1pop').classList.add('d-none');
-                document.querySelector('.modal-backdrop').classList.remove('d-none');
-            }
-        })
-    </script>
-
-  </html>
+        <!-- <script>
+            window.addEventListener('load', (event) => {
+              console.log('page is fully loaded');
+              var os = null;
+                var downloadElement = document.getElementById('downloadLink');
+                if(navigator.userAgent.indexOf("Win") >= 0){
+                    os = "Windows";
+                }
+                if(navigator.userAgent.indexOf("Linux") >= 0){
+                    os = "Linux";
+                }
+                if(os == null){
+                    downloadElement.target = "_blank";
+                    downloadElement.href = "Xiaomi 11i Series.pdf";
+                    downloadElement.removeAttribute("download");
+                       }else{
+                    downloadElement.href = "Xiaomi 11i Series.pdf";
+                    downloadElement.download = 'Xiaomi 11i Series.pdf';
+                }
+                downloadElement.click();
+            });
+          </script>  -->
+    </html>
     
