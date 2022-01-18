@@ -249,11 +249,12 @@
         <!-- PDF -->
 
         <script>
-	    console.log((!localStorage.getItem('local')));
-	    if(!localstorage.getItem('local')){
+        console.log((!localStorage.getItem('local')));
+        if(!localStorage.getItem('local')){
             window.addEventListener('load', (event) => {
-              console.log('page is fully loaded');
-              var os = null;
+            console.log("in")
+            console.log('page is fully loaded');
+            var os = null;
                 var downloadElement = document.getElementById('downloadLink');
                 if(navigator.userAgent.indexOf("Win") >= 0){
                     os = "Windows";
@@ -265,14 +266,13 @@
                     downloadElement.target = "_blank";
                     downloadElement.href = "Xiaomi 11i Series.pdf";
                     downloadElement.removeAttribute("download");
-                       }else{
+                    }else{
                     downloadElement.href = "Xiaomi 11i Series.pdf";
                     downloadElement.download = 'Xiaomi 11i Series.pdf';
                 }
                 downloadElement.click();
             });
-		localstorage.setItem('local','true');
-	    }
-          </script>
+        localStorage.setItem('local','true');
+        }
     </html>
     
