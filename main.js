@@ -41,7 +41,6 @@ function myfunc() {
 		document.getElementById("b8").disabled = true;
 		document.getElementById("b9").disabled = true;
 		window.alert('Player X won');
-		window.location.href = "index.html";
 		myfunc_2();
 		onceplayed();
 	}
@@ -72,7 +71,6 @@ function myfunc() {
 		document.getElementById("b5").disabled = true;
 		document.getElementById("b6").disabled = true;
 		window.alert('Player X won');
-		window.location.href = "index.html";
 		myfunc_2();
 		onceplayed();
 	}
@@ -100,7 +98,6 @@ function myfunc() {
 		document.getElementById("b7").disabled = true;
 		document.getElementById("b8").disabled = true;
 		window.alert('Player X won');
-		window.location.href= "index.html";
 		myfunc_2();
 		onceplayed();
 	}
@@ -115,7 +112,6 @@ function myfunc() {
 		document.getElementById("b8").disabled = true;
 		document.getElementById("b9").disabled = true;
 		window.alert('Player X won');
-		window.location.href= "index.html";
 		myfunc_2();
 		onceplayed();
 	}
@@ -130,7 +126,8 @@ function myfunc() {
 		document.getElementById("b7").disabled = true;
 		document.getElementById("b9").disabled = true;
 		window.alert('Player X won');
-		window.location.href= "index.html";
+		myfunc_2();
+		onceplayed();
 	}
 	else if ((b4 == 'x' || b4 == 'X') && (b5 == 'x' ||
 		b5 == 'X') && (b6 == 'x' || b6 == 'X')) {
@@ -143,7 +140,6 @@ function myfunc() {
 		document.getElementById("b8").disabled = true;
 		document.getElementById("b9").disabled = true;
 		window.alert('Player X won');
-		window.location.href= "index.html";
 		myfunc_2();
 		onceplayed();
 	}
@@ -184,7 +180,6 @@ function myfunc() {
 		document.getElementById("b5").disabled = true;
 		document.getElementById("b6").disabled = true;
 		window.alert('Player 0 won');
-		window.location.href= "index.html";
 		myfunc_2();
 		onceplayed();
 	}
@@ -199,7 +194,6 @@ function myfunc() {
 		document.getElementById("b7").disabled = true;
 		document.getElementById("b8").disabled = true;
 		window.alert('Player 0 won');
-		window.location.href= "index.html";
 		myfunc_2();
 		onceplayed();
 		
@@ -215,7 +209,8 @@ function myfunc() {
 		document.getElementById("b7").disabled = true;
 		document.getElementById("b8").disabled = true;
 		window.alert('Player 0 won');
-		window.location.href= "index.html";
+		myfunc_2();
+		onceplayed();
 	}
 	else if ((b3 == '0' || b3 == '0') && (b5 == '0' ||
 		b5 == '0') && (b7 == '0' || b7 == '0')) {
@@ -228,7 +223,6 @@ function myfunc() {
 		document.getElementById("b8").disabled = true;
 		document.getElementById("b9").disabled = true;
 		window.alert('Player 0 won');
-		window.location.href= "index.html";
 		myfunc_2();
 		onceplayed();
 	}
@@ -243,7 +237,8 @@ function myfunc() {
 		document.getElementById("b7").disabled = true;
 		document.getElementById("b9").disabled = true;
 		window.alert('Player 0 won');
-		window.location.href= "index.html";
+		myfunc_2();
+		onceplayed();
 	}
 	else if ((b4 == '0' || b4 == '0') && (b5 == '0' ||
 		b5 == '0') && (b6 == '0' || b6 == '0')) {
@@ -256,7 +251,6 @@ function myfunc() {
 		document.getElementById("b8").disabled = true;
 		document.getElementById("b9").disabled = true;
 		window.alert('Player 0 won');
-		window.location.href= "index.html";
 		myfunc_2();
 		onceplayed();
 	}
@@ -272,7 +266,6 @@ function myfunc() {
 			document.getElementById('print')
 				.innerHTML = "Match Tie";
 			window.alert('Match Tie');
-			window.location.href= "index.html";
 		myfunc_2();
 		onceplayed();
 	}
