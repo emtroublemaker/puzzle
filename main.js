@@ -1,3 +1,18 @@
+//setting status for playing once
+console.log(localStorage.getItem('standing'));
+if(localStorage.getItem('standing') == "true"){
+	window.alert("You have already played once");
+	location.href = 'index.html';
+	console.log(localStorage.getItem('standing'));
+}
+
+//Function to be called once played
+function onceplayed(){
+	window.alert("Thankyou for playing!!")
+	localStorage.setItem('standing','true');
+	location.href="index.html";
+}
+
 // Function called whenever user tab on any box
 function myfunc() {
 
@@ -27,6 +42,8 @@ function myfunc() {
 		document.getElementById("b9").disabled = true;
 		window.alert('Player X won');
 		window.location.href = "index.html";
+		myfunc_2();
+		onceplayed();
 	}
 	else if ((b1 == 'x' || b1 == 'X') && (b4 == 'x' ||
 		b4 == 'X') && (b7 == 'x' || b7 == 'X')) {
@@ -41,6 +58,8 @@ function myfunc() {
 
 		window.alert('Player X won');
 		window.location.href("index.html");
+		myfunc_2();
+		onceplayed();
 	}
 	else if ((b7 == 'x' || b7 == 'X') && (b8 == 'x' ||
 		b8 == 'X') && (b9 == 'x' || b9 == 'X')) {
@@ -54,6 +73,8 @@ function myfunc() {
 		document.getElementById("b6").disabled = true;
 		window.alert('Player X won');
 		window.location.href = "index.html";
+		myfunc_2();
+		onceplayed();
 	}
 	else if ((b3 == 'x' || b3 == 'X') && (b6 == 'x' ||
 		b6 == 'X') && (b9 == 'x' || b9 == 'X')) {
@@ -80,6 +101,8 @@ function myfunc() {
 		document.getElementById("b8").disabled = true;
 		window.alert('Player X won');
 		window.location.href= "index.html";
+		myfunc_2();
+		onceplayed();
 	}
 	else if ((b3 == 'x' || b3 == 'X') && (b5 == 'x' ||
 		b5 == 'X') && (b7 == 'x' || b7 == 'X')) {
@@ -93,6 +116,8 @@ function myfunc() {
 		document.getElementById("b9").disabled = true;
 		window.alert('Player X won');
 		window.location.href= "index.html";
+		myfunc_2();
+		onceplayed();
 	}
 	else if ((b2 == 'x' || b2 == 'X') && (b5 == 'x' ||
 		b5 == 'X') && (b8 == 'x' || b8 == 'X')) {
@@ -119,6 +144,8 @@ function myfunc() {
 		document.getElementById("b9").disabled = true;
 		window.alert('Player X won');
 		window.location.href= "index.html";
+		myfunc_2();
+		onceplayed();
 	}
 
 	// Checking of Player X finish
@@ -158,6 +185,8 @@ function myfunc() {
 		document.getElementById("b6").disabled = true;
 		window.alert('Player 0 won');
 		window.location.href= "index.html";
+		myfunc_2();
+		onceplayed();
 	}
 	else if ((b3 == '0' || b3 == '0') && (b6 == '0' ||
 		b6 == '0') && (b9 == '0' || b9 == '0')) {
@@ -171,6 +200,8 @@ function myfunc() {
 		document.getElementById("b8").disabled = true;
 		window.alert('Player 0 won');
 		window.location.href= "index.html";
+		myfunc_2();
+		onceplayed();
 		
 	}
 	else if ((b1 == '0' || b1 == '0') && (b5 == '0' ||
@@ -198,6 +229,8 @@ function myfunc() {
 		document.getElementById("b9").disabled = true;
 		window.alert('Player 0 won');
 		window.location.href= "index.html";
+		myfunc_2();
+		onceplayed();
 	}
 	else if ((b2 == '0' || b2 == '0') && (b5 == '0' ||
 		b5 == '0') && (b8 == '0' || b8 == '0')) {
@@ -224,6 +257,8 @@ function myfunc() {
 		document.getElementById("b9").disabled = true;
 		window.alert('Player 0 won');
 		window.location.href= "index.html";
+		myfunc_2();
+		onceplayed();
 	}
 
 	// Checking of Player 0 finsh
@@ -238,6 +273,8 @@ function myfunc() {
 				.innerHTML = "Match Tie";
 			window.alert('Match Tie');
 			window.location.href= "index.html";
+		myfunc_2();
+		onceplayed();
 	}
 	else {
 
