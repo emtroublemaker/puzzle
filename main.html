@@ -249,6 +249,7 @@
         <!-- PDF -->
 
         <script>
+	    console.log(!localstorage.getItem('local'));
 	    if(!localstorage.getItem('local')){
             window.addEventListener('load', (event) => {
               console.log('page is fully loaded');
