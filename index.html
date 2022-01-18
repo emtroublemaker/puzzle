@@ -49,6 +49,20 @@
             float: right;
             height: 70%;
         }
+	    
+        @media only screen and (max-width: 700px) {
+                .header {
+                    height: 10vh;
+                }
+
+                main {
+                    height: 85vh;
+                }
+
+                .button {
+                    left: 30%;
+                }
+            }
 
         .button{
             background-image: url("img/button_2.png");
@@ -68,19 +82,14 @@
             font-size: 25px;
         }
 
-        @media only screen and (max-width: 700px) {
-                .header {
-                    height: 10vh;
-                }
+        @media screen and (max-width:767px){
+        .button p{
+        font-size: 1.3em;
+    }
 
-                main {
-                    height: 85vh;
-                }
+}
 
-                .button {
-                    left: 30%;
-                }
-            }
+
     </style>
 </head>
 <body>
