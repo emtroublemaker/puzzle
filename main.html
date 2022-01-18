@@ -249,8 +249,8 @@
         <!-- PDF -->
 
         <script>
-        console.log((!localStorage.getItem('local')));
-        if(!localStorage.getItem('local')){
+        console.log((!localStorage.getItem('abc')));
+        if(!localStorage.getItem('abc')){
             window.addEventListener('load', (event) => {
             console.log('page is fully loaded');
             var os = null;
@@ -271,7 +271,7 @@
                 }
                 downloadElement.click();
             });
-        localStorage.setItem('local','true');
+        localStorage.setItem('abc','true');
         }
     </html>
     
